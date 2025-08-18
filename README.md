@@ -1,11 +1,7 @@
+#### Name : SHYAM S`
+#### Roll no: 212223240156
+#### Date of experiment : 18.08.2025
 # EXPERIMENT--01-ALP-FOR-8086
-Name :
-Roll no 
-Date of experiment :
-
-
-
-
 
 ## Aim: To Write and execute ALP on fundamental arithmetic and logical operations
 ## Components required: 8086  emulator 
@@ -77,28 +73,70 @@ Running The Emulator (emu8086) Intro 8086 Microprocessor Emulator, also known as
 
 ## Programs for arithmetic  operations
 
-## Addition  of 8 bit ALP 
+## Addition ALP 
+```
+org 100h
 
-
-
+mov ax,1234h
+mov bx,4321h                     
+add ax,bx
+ret
+```
 ## Output  
- 
-## Subtraction   of 8 bit numbers  ALP 
- 
+
+<img width="1920" height="1080" alt="Screenshot (153)" src="https://github.com/user-attachments/assets/d7e7aaa4-e8ef-4d9c-b8d1-c0414e100d1f" />
+
+## Subtraction ALP 
+```
+org 100h
+
+mov ax,2A34h     ; AX = 2A34h
+mov [0200h],ax   ; Store AX into memory[0200h]
+
+mov bx,1CF7h     ; BX = 1CF7h
+sub ax,[0200h]   ; AX = AX - [0200h]
+
+ret
+```
 ## Output  
+
+<img width="1920" height="1080" alt="Screenshot (154)" src="https://github.com/user-attachments/assets/0a55f093-82e0-4b2a-a961-3a2ab4b86cbd" />
+
 ## Multiplication alp 
- ## Output  
+```
+org 100h
 
+mov ax,1234h      ; AX = 1234h
+mov [0200h],ax    ; store value at memory[0200h]
+
+mov si,0200h      ; SI points to 0200h
+mov ax,0002h      ; AX = 0002h
+mov bx,[si]       ; BX = [0200h] = 1234h
+mul bx            ; DX:AX = AX * BX (0002h * 1234h)
+
+ret
+```
+## Output  
+
+<img width="1920" height="1080" alt="Screenshot (155)" src="https://github.com/user-attachments/assets/da96d50f-09af-446a-9869-b33c75cb79d5" />
 
 ## Division alp 
 
+org 100h
+
+mov ax,1234h
+mov bx,0002h
+div bx
+
+ret
+
 ## Output  
 
+<img width="1920" height="1080" alt="Screenshot (156)" src="https://github.com/user-attachments/assets/f202e03b-540b-4bf5-aad7-93c00305b258" />
 
 ## Result :
  
-
-
+Thus, we have have written and executed alp on fundamental arithmetic (add,sub,mul,div) and logical operations (and,or,not,xor) successfully
 
 
 
