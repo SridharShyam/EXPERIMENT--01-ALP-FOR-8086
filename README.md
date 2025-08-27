@@ -1,7 +1,11 @@
-#### Name : SHYAM S`
-#### Roll no: 212223240156
-#### Date of experiment : 18.08.2025
 # EXPERIMENT--01-ALP-FOR-8086
+### Name : SHYAM S
+### Roll no : 212223240156
+### Date of experiment : 18.08.2025
+
+
+
+
 
 ## Aim: To Write and execute ALP on fundamental arithmetic and logical operations
 ## Components required: 8086  emulator 
@@ -73,73 +77,122 @@ Running The Emulator (emu8086) Intro 8086 Microprocessor Emulator, also known as
 
 ## Programs for arithmetic  operations
 
-## Addition ALP 
+## Addition of 16 bit ALP (Register Mode)
 ```
-org 100h
+MOV AX,1A52h
 
-mov ax,1234h
-mov bx,4321h                     
-add ax,bx
-ret
+MOV BX,32B3h
+
+ABB AX,BX
 ```
-## Output  
 
-<img width="1920" height="1080" alt="Screenshot (153)" src="https://github.com/user-attachments/assets/d7e7aaa4-e8ef-4d9c-b8d1-c0414e100d1f" />
+## Output
 
-## Subtraction ALP 
+<img width="1920" height="1080" alt="Screenshot (82)" src="https://github.com/user-attachments/assets/f8c49b29-e0da-4a57-9294-199f0d97bace" />
+
+## Subtraction of 8 bit numbers ALP (Immediate Mode) 
 ```
-org 100h
+MOV AX,1a52h
 
-mov ax,2A34h     ; AX = 2A34h
-mov [0200h],ax   ; Store AX into memory[0200h]
-
-mov bx,1CF7h     ; BX = 1CF7h
-sub ax,[0200h]   ; AX = AX - [0200h]
+SUB AX,32b3h
 
 ret
 ```
-## Output  
 
-<img width="1920" height="1080" alt="Screenshot (154)" src="https://github.com/user-attachments/assets/0a55f093-82e0-4b2a-a961-3a2ab4b86cbd" />
+## Output
 
-## Multiplication alp 
-```
-org 100h
+<img width="1920" height="1080" alt="Screenshot (84)" src="https://github.com/user-attachments/assets/8e916476-4bc7-472c-96da-5164b781ae03" />
 
-mov ax,1234h      ; AX = 1234h
-mov [0200h],ax    ; store value at memory[0200h]
+## Multiplication alp (Direct Memory Mode)
+``` 
+NUM DW 1a52h
+           
+MOV AX,32b3h
 
-mov si,0200h      ; SI points to 0200h
-mov ax,0002h      ; AX = 0002h
-mov bx,[si]       ; BX = [0200h] = 1234h
-mul bx            ; DX:AX = AX * BX (0002h * 1234h)
+MUL NUM
 
 ret
 ```
 ## Output  
 
-<img width="1920" height="1080" alt="Screenshot (155)" src="https://github.com/user-attachments/assets/da96d50f-09af-446a-9869-b33c75cb79d5" />
+<img width="1920" height="1080" alt="Screenshot (86)" src="https://github.com/user-attachments/assets/d5b64f89-0bca-437d-a070-cb9e6fbe9b6d" />
 
-## Division alp 
 
-org 100h
+## Division alp (Register Indirect Mode)
 
-mov ax,1234h
-mov bx,0002h
-div bx
+```   
+NUM DW 32B3h
+           
+MOV BX, OFFSET NUM 
+
+MOV AX, 1A52h
+
+DIV WORD PTR [BX]
 
 ret
+```
+## Output  
+
+<img width="1920" height="1080" alt="Screenshot (87)" src="https://github.com/user-attachments/assets/071d9b8c-bd9b-4510-bb5d-bcce808b0ebe" />
+
+## AND  of 16 bit ALP (Register Mode)
+```
+MOV AX, 1A52h
+
+MOV BX, 32B3h
+
+AND AX,BX
+
+ret      
+```
+
+## Output
+
+<img width="1920" height="1080" alt="Screenshot (88)" src="https://github.com/user-attachments/assets/89f616ce-20f2-4be9-8785-8f445e632c90" />
+
+## OR  of 16 bit ALP (Register Mode)
+```
+MOV AX, 1A52h
+
+MOV BX, 32B3h
+
+OR AX,BX
+
+ret       
+```
 
 ## Output  
 
-<img width="1920" height="1080" alt="Screenshot (156)" src="https://github.com/user-attachments/assets/f202e03b-540b-4bf5-aad7-93c00305b258" />
+<img width="1920" height="1080" alt="Screenshot (89)" src="https://github.com/user-attachments/assets/108dc897-e0ae-45b2-8e5c-a69e9e24cb3e" />
+
+## NOT  of 16 bit ALP (Register Mode)
+```
+MOV AX, 1A52h
+
+NOT AX
+
+ret      
+```
+
+## Output  
+<img width="1920" height="1080" alt="Screenshot (91)" src="https://github.com/user-attachments/assets/b0bf1440-0ff3-4adb-9378-33ed7b3d9f91" />
+
+
+## XOR  of 16 bit ALP (Register Mode)
+```
+MOV AX, 1A52h
+
+MOV BX, 32B3h
+
+XOR AX,BX
+
+ret   
+```
+
+## Output  
+
+<img width="1920" height="1080" alt="Screenshot (90)" src="https://github.com/user-attachments/assets/65ed7905-38d6-45ac-8cb6-1cd9c8d0840f" />
 
 ## Result :
- 
-Thus, we have have written and executed alp on fundamental arithmetic (add,sub,mul,div) and logical operations (and,or,not,xor) successfully
 
-
-
-
-
-
+The execution of ALP on fundamental arithmetic and logical operations is successfully completed.
