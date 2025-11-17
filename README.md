@@ -1,11 +1,6 @@
-# EXPERIMENT 01 ALP FOR 8086
+# EXPERIMENT: 01 - ALP FOR 8086
 #### Name: SHYAM S
 #### Reg.No: 212223240156
-#### Date of experiment: 18.08.2025
-
-
-
-
 
 ## Aim:
 To Write and execute ALP on fundamental arithmetic and logical operations
